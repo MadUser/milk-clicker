@@ -1,0 +1,26 @@
+<hello name="Dean"></hello>
+
+<div class="drops"></div>
+<br/>
+<br/>
+<br/>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<input type="image" (click)="onClick()" src="https://media2.giphy.com/media/3oz8xCX30CNCJZigSc/200.webp?cid=790b7611ad5e14d23792564874236f54a5fb52df1ecf82c7&rid=200.webp" />
+<br/>
+<br/>
+<br/>
+<br/>
+<div>
+Milk Carton: {{counter |  number:'1.0-0'}}
+</div>
+<div class="milk"></div>
+<div style="position:absolute; top:0; right:0">
+  <div style="height:100px" >&nbsp;</div>
+  <input type="image" (click)="onClick()" width="99px" src="https://media.istockphoto.com/photos/cream-drop-picture-id506895166?k=6&m=506895166&s=612x612&w=0&h=b_OuRF66bgB6fDkKQtem2ZG6ORftKwbl4T9ZN5e0DQ4=" />
+  <br/>
+<input type="image" [ngClass]="{'disabled': counter < farmPrice}" [disabled]="counter < farmPrice" (click)="onFarmClick()" width="99px" src="https://i.gifer.com/13zP.gif" />
+<br/>
+Farms: {{farmMulti}}
+<br/>
+Price:  {{farmPrice}}
+  </div>
