@@ -1,6 +1,10 @@
 <h1>Milk Clicker</h1>
+@if (!gameOver) {
 <div class="clicker">
   <img src="cow.gif" alt="cow" width="200" height="200" (click)="clickCow()">
   <p>click to get milk</p>
   <h2>{{milk}}</h2>
 </div>
+} @else {
+  <h1>Game Over</h1>
+}

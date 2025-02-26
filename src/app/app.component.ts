@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,10 +7,20 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   milk = 0;
-
+  gameOver = false;
+  
   clickCow() {
     this.milk++;
+  }
+
+  ngOnInit() {
+    setInterval(() => {
+      this.milk -= 10;
+      if(this.milk < 0) {
+        this.gameOver = true;
+      }
+    }, 10000);
   }
 }
