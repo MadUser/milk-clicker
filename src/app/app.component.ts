@@ -8,5 +8,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'milk-clicker';
+  milk = 0;
+
+  clickCow() {
+    this.milk++;
+  }
 }
