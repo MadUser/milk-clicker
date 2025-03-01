@@ -1,32 +1,33 @@
 <h1>Milk Clicker Pro</h1>
 <div class="layout">
   @if (!gameOver) {
-    <div class="clicker">
-      <div class="cow-container">
-        <img src="cow.gif" alt="cow" width="200" height="200" (click)="clickCow()">
-        @for(item of animationItems; track item; let i = $index) {
-        <div class="flying-text" [class.animate]="animationItems[i]" (animationend)="animationItems[i] = false">
-          + {{ clickValue }}
-        </div>
-        }
+  <div class="clicker">
+    <div class="cow-container">
+      <img src="cow.gif" alt="cow" width="200" height="200" (click)="clickCow()">
+      @for(item of animationItems; track item; let i = $index) {
+      <div class="flying-text" [class.animate]="animationItems[i]" (animationend)="animationItems[i] = false">
+        + {{ clickValue }}
       </div>
-      <p>click to get milk</p>
-      <h2>{{milk}}</h2>
-    </div>
-    } @else {
-      <div class="clicker">
-      <h1>Game Over</h1>
-      </div>
-    }
-    <div class="shop">
-      @for(shop of ShopArray; track shop) {
-        <div>
-          <div><strong>{{shop.title}} ({{shop.bought}})</strong></div>
-          <div>{{shop.desc}}</div>
-          <div>Cost: {{shop.price}}
-            <button (click)="buyItem(shop)" [disabled]="shop.price > milk || shop.maxAllowed <= shop.bought">Buy</button>
-        </div>
-        </div>
       }
     </div>
+    <p>click to get milk</p>
+    <h2>{{milk}}</h2>
+  </div>
+  } @else {
+  <div class="clicker">
+    <h1>Game Over</h1>
+  </div>
+  }
+  <div class="shop">
+    @for(shop of ShopArray; track shop) {
+    <div>
+      <div><strong>{{shop.title}} ({{shop.bought}})</strong></div>
+      <div>{{shop.desc}}</div>
+      <div>Cost: {{shop.price}}
+        <button (click)="buyItem(shop)" [disabled]="shop.price > milk || shop.maxAllowed <= shop.bought">Buy</button>
+      </div>
+    </div>
+    <br>
+    }
+  </div>
 </div>

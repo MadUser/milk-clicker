@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   animationCounter = 1;
   animationItems = new Array(10).fill(false);
   ShopArray = [
-    {title:"Clicker Plus", price:100, clickCount:1, desc:"1 milk per click", bought:0, maxAllowed:10}
+    {title:"Clicker Plus", price:100, clickCount:1, desc:"1 milk per click", bought:0, maxAllowed:10},
+    {title:"Clicker Pro", price:1000, clickCount:1, desc:"1 milk per click", bought:0, maxAllowed:10}
   ]
   clickValue = 1;
   milk = 0;
