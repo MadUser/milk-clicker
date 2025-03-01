@@ -23,8 +23,9 @@
         <div>
           <div><strong>{{shop.title}} ({{shop.bought}})</strong></div>
           <div>{{shop.desc}}</div>
-          <div>Cost: {{shop.price}}</div>
-          <button (click)="buyItem(shop)" [disabled]="shop.price > milk || shop.maxAllowed <= shop.bought">Buy</button>
+          <div>Cost: {{shop.price}}
+            <button (click)="buyItem(shop)" [disabled]="shop.price > milk || shop.maxAllowed <= shop.bought">Buy</button>
+        </div>
         </div>
       }
     </div>
