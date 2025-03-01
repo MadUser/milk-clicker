@@ -1,17 +1,24 @@
+
+
 h1 {
     text-align: center;
 }
 
+.layout {
+    display: flex;
+    justify-content: center;
+}
 .clicker {
     text-align: center;
-
+    flex-basis: 80%;
     .cow-container {
         position: relative;
     }
 }
 
 img {
-    border-radius: 6px;;
+    border-radius: 6px;
+    user-select: none;
 }
 
 @keyframes flyUpFade {
@@ -26,6 +33,7 @@ img {
 }
 
 .flying-text {
+    user-select: none;
     visibility: hidden;
     position: absolute;
     top: 50%;
