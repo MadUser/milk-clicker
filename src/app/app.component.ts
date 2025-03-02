@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
   
   clickCow(event: any) {
     const x = event.clientX;
-
     this.milk += this.clickValue;
+    document.title = this.milk + " milk gallons";
     this.setAnimation(x);
   }
 
