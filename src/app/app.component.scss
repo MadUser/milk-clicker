@@ -33,11 +33,11 @@ img {
 }
 
 .flying-text {
+    pointer-events: none;
     user-select: none;
     visibility: hidden;
     position: absolute;
     top: 50%;
-    left: 50%;
     display: inline-block; /* Ensures proper transformation */
     font-size: 24px;
     font-weight: bold;

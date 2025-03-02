@@ -3,9 +3,9 @@
   @if (!gameOver) {
   <div class="clicker">
     <div class="cow-container">
-      <img src="cow.gif" alt="cow" width="200" height="200" (click)="clickCow()">
-      @for(item of animationItems; track item; let i = $index) {
-      <div class="flying-text" [class.animate]="animationItems[i]" (animationend)="animationItems[i] = false">
+      <img src="cow.gif" alt="cow" width="200" height="200" (click)="clickCow($event)">
+      @for(item of animationItems; track i; let i = $index) {
+      <div class="flying-text" [class.animate]="animationItems[i].on" (animationend)="animationItems[i].on = false"  [ngStyle]="{ left: animationItems[i].x + 'px' }">
         + {{ clickValue }}
       </div>
       }

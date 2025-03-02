@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   animationCounter = 1;
-  animationItems = new Array(10).fill(false);
+  animationItems = new Array(10).fill({on:false});
   ShopArray = [
     {title:"Clicker Plus", price:100, clickCount:1, desc:"1 milk per click", bought:0, maxAllowed:10},
     {title:"Clicker Pro", price:1000, clickCount:1, desc:"1 milk per click", bought:0, maxAllowed:10}
@@ -20,9 +20,11 @@ export class AppComponent implements OnInit {
   milk = 0;
   gameOver = false;
   
-  clickCow() {
-    this.milk+=this.clickValue;
-    this.setAnimation();
+  clickCow(event: any) {
+    const x = event.clientX;
+
+    this.milk += this.clickValue;
+    this.setAnimation(x);
   }
 
   ngOnInit() {
@@ -34,8 +36,8 @@ export class AppComponent implements OnInit {
     }, 10000);
   }
 
-  setAnimation() {
-    this.animationItems[this.animationCounter] = true;
+  setAnimation(x: number) {
+    this.animationItems[this.animationCounter] = {on:true, x:x-50};
     this.animationCounter++;
     if(this.animationCounter > 9) {
       this.animationCounter = 0;
